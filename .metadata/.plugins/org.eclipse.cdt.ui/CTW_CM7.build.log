@@ -1,0 +1,11 @@
+23:05:51 **** Incremental Build of configuration Debug for project CTW_CM7 ****
+make -j16 all 
+arm-none-eabi-gcc "../Core/Src/xbee.c" -mcpu=cortex-m7 -std=gnu11 -g3 -DDEBUG -DCORE_CM7 -DUSE_HAL_DRIVER -DSTM32H745xx -c -I../Core/Inc -I../../Drivers/STM32H7xx_HAL_Driver/Inc -I../../Drivers/STM32H7xx_HAL_Driver/Inc/Legacy -I../../Drivers/CMSIS/Device/ST/STM32H7xx/Include -I../../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/xbee.d" -MT"Core/Src/xbee.o" --specs=nano.specs -mfpu=fpv5-d16 -mfloat-abi=hard -mthumb -o "Core/Src/xbee.o"
+../Core/Src/xbee.c:14:18: error: expected declaration specifiers or '...' before 'frame'
+   14 | void payloadRead(frame *XBEE_FRAME){
+      |                  ^~~~~
+make: *** [Core/Src/subdir.mk:34: Core/Src/xbee.o] Error 1
+"make -j16 all" terminated with exit code 2. Build might be incomplete.
+
+23:05:51 Build Failed. 2 errors, 0 warnings. (took 297ms)
+
