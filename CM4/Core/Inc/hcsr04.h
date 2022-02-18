@@ -37,6 +37,6 @@ void sensorPEC(TIM_TypeDef *htim);
  * @param: None
  * @retval: None, values are instead stored in a struct
 */
-void sensorData(typedef struct *hcsr04_data);
+void sensorData(hcsr04_data *data);
 
 #endif /* INC_HCSR04_H_ */

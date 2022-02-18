@@ -57,6 +57,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
+#define dataXmit_Pin GPIO_PIN_8
+#define dataXmit_GPIO_Port GPIOD
 #define sensorEcho_Pin GPIO_PIN_0
 #define sensorEcho_GPIO_Port GPIOD
 #define sensorTrig_Pin GPIO_PIN_1

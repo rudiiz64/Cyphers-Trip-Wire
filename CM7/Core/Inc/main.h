@@ -61,10 +61,6 @@ void Error_Handler(void);
 #define dataRX_GPIO_Port GPIOB
 #define dataTX_Pin GPIO_PIN_2
 #define dataTX_GPIO_Port GPIOB
-#define STLINK_RX_Pin GPIO_PIN_8
-#define STLINK_RX_GPIO_Port GPIOD
-#define STLINK_TX_Pin GPIO_PIN_9
-#define STLINK_TX_GPIO_Port GPIOD
 /* USER CODE BEGIN Private defines */
 
 /* USER CODE END Private defines */

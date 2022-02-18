@@ -29,9 +29,10 @@
 #include <time.h>
 #include <sys/time.h>
 #include <sys/times.h>
-
+#include <sys/unistd.h>
 
 /* Variables */
+extern UART_HandleTypeDef huart3;
 extern int __io_putchar(int ch) __attribute__((weak));
 extern int __io_getchar(void) __attribute__((weak));
 
@@ -74,15 +75,22 @@ __attribute__((weak)) int _read(int file, char *ptr, int len)
 return len;
 }
 
-__attribute__((weak)) int _write(int file, char *ptr, int len)
+/*__attribute__((weak))*/ int _write(int file, char *ptr, int len)
 {
-	int DataIdx;
-
-	for (DataIdx = 0; DataIdx < len; DataIdx++)
-	{
-		__io_putchar(*ptr++);
+//	int DataIdx;
+//
+//	for (DataIdx = 0; DataIdx < len; DataIdx++)
+//	{
+//		__io_putchar(*ptr++);
+//	}
+//	return len;
+	if ((file != STDOUT_FILENO) && (file != STDERR_FILENO)){
+		errno = EBADF;
+		return -1;
 	}
-	return len;
+	HAL_StatusTypeDef status = HAL_UART_Transmit(&(huart3.Instance), (uint8_t*)ptr, len, 1000);
+
+	return (status == HAL_OK ? len : 0);
 }
 
 int _close(int file)
