@@ -1,0 +1,4 @@
+../Core/Src/xbee.c:15:6:xbee_init	16	static
+../Core/Src/xbee.c:27:6:frameRead	64	static
+../Core/Src/xbee.c:101:6:frameGenerate	16	static
+../Core/Src/xbee.c:105:6:frameClear	4	static
